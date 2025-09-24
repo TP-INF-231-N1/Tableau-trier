@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int Tab[1000000];
+    int n;
+    int croix = 0;   
+    int decroix = 0; 
+    int tr = 0;      
+
+    printf("ENTRER LA TAILLE DU TABLEAU : \t");
+    scanf("%d", &n);
+    printf("\n");
+
+    for (int i = 0; i < n; i++) {
+        printf("L'ÉLÉMENT N°(%d) est : \t", i);
+        scanf("%d", &Tab[i]);
+    }
+
+    printf("\n");
+
+    for (int i = 0; i < n - 1; i++) {
+        if (Tab[i] < Tab[i + 1]) {
+            croix = 1;      
+        } else if (Tab[i] > Tab[i + 1]) {
+            decroix = 1;    
+        }
+    }
+
+    if (croix == 1 && decroix == 0) {
+        printf("LE TABLEAU EST TRIER DANS L'ORDRE CROISSANT\n");
+    } else if (decroix == 1 && croix == 0) {
+        printf("LE TABLEAU EST TRIER DANS L'ORDRE DECROISSANT\n");
+    } else {
+        printf("LE TABLEAU N'EST PAS TRIER\n");
+    }
+
+    return 0;
+}
